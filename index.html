@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Programme de la Conférence</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #f7f7f7; margin: 0; padding: 0;}
+    .container { max-width: 900px; margin: 40px auto; background: #fff; border-radius: 16px; box-shadow: 0 2px 12px #0001; padding: 32px; }
+    h1 { text-align: center; color: #112244; margin-bottom: 32px; }
+    .btn-group { display: flex; justify-content: center; margin-bottom: 32px; gap: 20px; flex-wrap: wrap;}
+    button { padding: 14px 36px; font-size: 1.1em; border: none; border-radius: 8px; background: #0077cc; color: #fff; cursor: pointer; transition: background 0.2s;}
+    button.selected, button:hover { background: #004e8c; }
+    .programme { margin-top: 10px; }
+    .day-header { background: #fff933; font-weight: bold; font-size: 1.2em; padding: 8px; margin-bottom: 8px; border-radius: 6px; text-align: center; border: 1px solid #c4c400;}
+    .session-table { width: 100%; border-collapse: collapse; margin-bottom: 20px;}
+    .session-table th, .session-table td { border: 1px solid #a5a5a5; padding: 8px; text-align: left;}
+    .session-table th { background: #eeeeee; }
+    .session-title { font-weight: bold; background: #e2e9f7; }
+    .session-block { margin-bottom: 25px; }
+    .session1 { background: #eef8df; }
+    .session2 { background: #d6eaf8; }
+    .session3 { background: #e5daed; }
+    .session4 { background: #fae1cc; }
+    .session5 { background: #e5daed; }
+    .session6 { background: #d6eaf8; }
+    .session7 { background: #fae1cc; }
+    .online { background: #fae1cc; }
+    .break, .gala, .remark { background: #f3f3f3; font-style: italic; }
+    @media (max-width: 650px) {
+      .container { padding: 8px;}
+      .session-table th, .session-table td { font-size: 0.96em; }
+      .btn-group { flex-direction: column; gap: 10px;}
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER CONFERENCE DESIGN -->
+  <style>
+    /* Header-specific styles to match the provided design */
+  #conference-header { max-width:980px; margin:18px auto; padding:18px 16px 14px 16px; border-radius:10px; background:#fff; box-shadow:0 6px 18px rgba(0,0,0,0.06); position:relative; overflow:hidden; }
+    #conference-header::after{ content:''; position:absolute; left:0; right:0; height:6px; background:#d8863b; top:8px; opacity:1; }
+  #conference-header .grid { display:flex; justify-content:center; align-items:center; }
+  #conference-header .center { text-align:center; padding:2px 6px 2px 6px; display:flex; flex-direction:column; align-items:center; }
+    /* title image fallback behavior */
+  /* ensure header images never overflow their column */
+  #conference-header img{ max-width:100%; height:auto; display:block; }
+  #conference-header .title-img{ max-height:94px; display:block; margin:2px auto 6px auto; width:320px; max-width:60%; }
+  #conference-header .title-text{ font-family:'Arial Black', Arial, sans-serif; color:#a55a1a; font-size:2.0rem; line-height:0.95; text-shadow:2px 2px 0 #633a13; letter-spacing:1px; margin-top:6px; }
+  /* place the damier image directly behind the "OF" text at 50% opacity */
+  #conference-header .of { color:#a55a1a; font-weight:700; margin:2px 0 6px 0; position:relative; display:inline-block; padding:6px 14px; z-index:2; }
+  /* center the damier behind OF and lift it slightly so it doesn't touch the SIL logo */
+  #conference-header .of::before { content:''; position:absolute; left:50%; top:50%; width:300px; height:180px; transform:translate(-50%,-40%); background-image:url('photo/Picture3.png'); background-repeat:no-repeat; background-size:contain; opacity:0.5; z-index:-1; pointer-events:none; }
+    #conference-header .sil-logo { height:78px; display:inline-block; margin:6px 0 6px 0; }
+    #conference-header .theme { font-style:italic; color:#777; margin-top:8px; }
+    #conference-header .dates { color:#a55a1a; font-weight:700; margin-top:6px; }
+    /* faded damier background centered and larger */
+  /* keep a faint large damier behind the whole block but very subtle */
+  #conference-header::before { content:''; position:absolute; inset:6% 10%; background-image:url('photo/Picture3.png'); background-repeat:no-repeat; background-size:520px; opacity:0.06; pointer-events:none; transform:translateY(-8%); }
+    @media (max-width:900px){
+      #conference-header .grid{ grid-template-columns:140px 1fr 80px; }
+    }
+    @media (max-width:700px){
+      #conference-header .grid{ grid-template-columns:1fr; text-align:center; }
+      #conference-header .ensa{ order:-1; margin-bottom:8px; justify-self:center; }
+      #conference-header::before{ display:none; }
+      #conference-header .title-text{ font-size:1.6rem; }
+    }
+    /* better mobile adjustments */
+    @media (max-width:480px){
+      #conference-header{ padding:12px 10px 12px 10px; }
+      #conference-header .title-img{ max-height:72px; width:240px; max-width:70%; }
+      #conference-header .sil-logo{ height:58px; }
+      #conference-header .of::before{ width:220px; height:120px; transform:translate(-50%,-30%); opacity:0.45; }
+      #conference-header .title-text{ font-size:1.35rem; }
+      #conference-header .dates{ font-size:0.95rem; }
+      /* ensure container doesn't overflow horizontally */
+      body, html { overflow-x:hidden; }
+      /* on very narrow screens prefer the text title to avoid overflow */
+      #conference-header .title-img{ display:block; }
+      @media (max-width:340px){
+        #conference-header .title-img{ display:none; }
+        #conference-header .title-text{ display:block; font-size:1.2rem; }
+      }
+    }
+  /* small visual spacing under header */
+  #conference-header + .container{ margin-top:18px; }
+  </style>
+  <div id="conference-header">
+    <div class="grid">
+      <div class="center">
+        <!-- prefer the stylized title image (Picture1) and fall back to text -->
+        <img class="title-img" src="photo/Picture1.png" alt="THE 8th EDITION" onerror="this.onerror=null; this.style.display='none'">
+        <div class="title-text">THE 8th<br>EDITION</div>
+        <div class="of" >OF</div>
+        <img class="sil-logo" src="photo/Picture7.png" alt="SIL'25" onerror="this.onerror=null; this.style.display='none'">
+        <div class="theme">Under the theme</div>
+        <div style="font-size:1.05rem; color:#222; font-weight:600; margin-top:6px;">« Digital Transformation in Automotive &amp; Aeronautical Supply Chains »</div>
+        <div class="dates">23-25 October, 2025 <span style="color:#444; font-weight:normal;">Marrakech, Morocco</span></div>
+      </div>
+    </div>
+  </div>
+  <script>
+    // If the title image loads, hide the text fallback
+    (function(){
+      const img = document.querySelector('#conference-header .title-img');
+      const txt = document.querySelector('#conference-header .title-text');
+      if(img && txt){
+        img.onload = function(){ txt.style.display='none'; };
+        img.onerror = function(){ this.style.display='none'; };
+      }
+    })();
+  </script>
+  <div class="container">
+    <h1>Provisional Conference Program<br><span style="font-size:0.7em;font-weight:normal;">SIL'25 Marrakech, Morocco | 23-25 October 2025</span></h1>
+    <div class="btn-group">
+      <button id="btn1" onclick="showProgramme(1)">Jeudi 23 octobre</button>
+      <button id="btn2" onclick="showProgramme(2)">Vendredi 24 octobre</button>
+      <button id="btn3" onclick="showProgramme(3)">Samedi 25 octobre</button>
+    </div>
+    <div class="programme" id="programme"></div>
+  </div>
+  <script>
+    // Contenus HTML des programmes par jour
+    const programmes = {
+      1: `
+      <div class="day-header">THURSDAY, OCTOBER 23</div>
+      <table class="session-table">
+        <tr><td>8H00 – 9H</td><td>INSCRIPTION<br><strong>OFFICIAL OPENING CEREMONY</strong><br>
+          – &nbsp;&nbsp;&nbsp;MR. BLAID BOUGADIR – PRESIDENT OF CADI AYYAD UNIVERSITY<br>
+          – &nbsp;&nbsp;&nbsp;MR. HASSAN AYAD – DIRECTOR OF ENSA MARRAKECH<br>
+          – &nbsp;&nbsp;&nbsp;MR. RACHID BENMOUSSA – STEERING COMMITTEE CHAIR<br>
+          – &nbsp;&nbsp;&nbsp;MS. TOURIA BENAZZOUZ – ORGANIZING COMMITTEE CHAIR
+        </td></tr>
+        <tr>
+          <td>9H30 – 10H15</td>
+          <td>
+            <span class="session-title">Plenary Talk 1: Supply Chain 4.0: A strategic approach</span><br>
+            <strong>Dr. Guilherme F. Frederico</strong>, Professor of Operations, Supply Chain and Project Management at Federal University of Paraná –UFPR – School of Management, Curitiba, Brazil<br>
+            <em>Chair : Prof. Anas ABOU EL KALAM</em>
+          </td>
+        </tr>
+        <tr>
+          <td>10H15 – 11H</td>
+          <td>
+            <span class="session-title">Plenary Talk 2 : Ergonomics in Logistics Digitalization: Transitioning from Industry 4.0 to Industry 5.0</span><br>
+            <strong>Mr. Hicham Bensghir</strong>, Ergonomist | Specialist in Human and Organizational Factors and Human-Machine Interaction, SAFRAN, Morocco<br>
+            <em>Chair : Prof. Rachid BENMOUSSA</em>
+          </td>
+        </tr>
+        <tr><td colspan="2" class="break">11H– 11H30 &nbsp;|&nbsp; COFFEE BREAK</td></tr>
+        <tr>
+          <td>11H30– 12H15</td>
+          <td>
+            <span class="session-title">Plenary Talk 3 : Supply Chain Digitalization: Interface Challenges and Data Governance Complexity</span><br>
+            <strong>Mr. Salaheddine AIT OUAKRIM</strong>, General Manager - BLS Transports, Morocco<br>
+            Logistics and Supply Chain Expert | End-to-End Logistics | Digital Transformation<br>
+            <em>Chair : Prof. Maria ZRIKEM</em>
+          </td>
+        </tr>
+        <tr>
+          <td>12H15–13H</td>
+          <td>
+            <span class="session-title">Plenary Talk 4 : Eco-design for the Automotive Industry</span><br>
+            <strong>Mr. Rachid Benmoussa</strong>, Professor in Industrial and Logistics Engineering ENSA Marrakech, Cadi Ayyad University, Morocco<br>
+            <em>Chair : Prof. Touria BENAZZOUZ</em>
+          </td>
+        </tr>
+        <tr><td colspan="2" class="break">13H– 14H &nbsp;|&nbsp; LUNCH BREAK</td></tr>
+        <tr>
+          <td colspan="2">
+            <b>14H – 16H &nbsp;|&nbsp; PARALLEL TECHNICAL SESSIONS</b>
+            <div class="session-block session1">
+              <u>Session 1 – Artificial Intelligence Applications & Advanced Analytics</u><br>
+              <em>Chair : Prof. Samya DAHBI</em>
+              <ul>
+                <li>Guelali Rime, Hamza Ennadafy, Mustapha Jammoukh, Naoual Belouagadia – <i>Performance Evaluation of AI Models for Monitoring Automotive Component Traceability Data</i></li>
+                <li>Rouidi Ibrahim, Driss Serrou, Ismail Lagrati – <i>Impact of Artificial Intelligence on the Evolution of Performance Measurement in Supply Chain 4.0</i></li>
+                <li>Fatima-zahra Aboumejd, Moulay Ali El Ouahidi and Mustapha Ahlaqgach – <i>The Role of Artificial Intelligence in E-commerce: A Comprehensive Review</i></li>
+                <li>Khaoula Elkabatne, Touria Benazzouz, Samya Dahbi – <i>Demand Forecasting Under Uncertainty: Evaluating Statistical and Machine Learning Models</i></li>
+                <li>Assem Amedjar, Dounia Karimi – <i>AI-Driven Framework for Tax Fraud Detection: Application to Morocco</i></li>
+              </ul>
+            </div>
+            <div class="session-block session2">
+              <u>Session 2 – Industry 5.0 & Human-Centric Approaches</u><br>
+              <em>Chair : Prof. Abdelkabir CHARKAOUI</em>
+              <ul>
+                <li>Iman Aissa Ouhladou, Touria Benazzouz, Samya Dahbi – <i>Resilient and Ethical Raw Material Sourcing in the Automotive Industry: An Industry 5.0 Case Study of BMW's Cobalt Sourcing</i></li>
+                <li>Saad Falih, Khadija Echefaj, Anass Cherrafi, Abdelkabir Charkaoui – <i>Synergies between Circular Economy and Operational Excellence in Industry 5.0</i></li>
+                <li>Saloua Mihoubi, Touria Benazzouz – <i>Assessing Human-Centricity in Supply Chains</i></li>
+                <li>Hind Arfaoui, Nezha Naitboubker, Hanae Mansour – <i>Impact of Organizational and Technological Innovation on Firm Performance</i></li>
+                <li>Touria Benazzouz, Iman Aissa Ouhladou, Saloua Mihoubi, Samya Dahbi, Rachid Benmoussa – <i>Digital Twin-Driven Ergonomic Risk Forecasting in Manufacturing Assembly</i></li>
+              </ul>
+            </div>
+            <div class="session-block session3">
+              <u>Session 3 – Sustainable Manufacturing: Quality, Traceability and Certification (Online Session)</u><br>
+              <em>Chair : Prof. Fatine ELHAROUNI</em>
+              <ul>
+                <li>Wissal Taqui, Ibtissam El Hassani, Anass Cherrafi, Adnane Marzaq, Mohamed Bouhdouch – <i>Blockchain-Based Waste Energy Traceability in the Leather Industry</i></li>
+                <li>Kaoutar Bakkali Tahiri, Abderrazak Boumane, Youness Chater – <i>Reinventing Quality Problem Solving in the Manufacturing Industry: A Scoping Review of Traditional Approaches Limitations</i></li>
+                <li>Sana Elhidaoui, Ilhame Hakmaoui – <i>Three-Layer Framework for Sustainable Digital Supply Chains</i></li>
+                <li>Oumaima El Affaki, Mariam Benhadou, Abdellah Haddout – <i>How Is IATF 16949:2016 Certification Improving the Automotive Ecosystem?</i></li>
+              </ul>
+            </div>
+          </td>
+        </tr>
+        <tr><td colspan="2" class="break">16H00 – 16H30 &nbsp;|&nbsp; COFFEE BREAK</td></tr>
+        <tr>
+          <td colspan="2">
+            <b>16H30 – 18H15 &nbsp;|&nbsp; PARALLEL TECHNICAL SESSIONS</b>
+            <div class="session-block session4">
+              <u>Session 4 – Maintenance 4.0 & Predictive Approaches</u><br>
+              <em>Chair : Prof. Said ELFEZAZI</em>
+              <ul>
+                <li>Yassine Moumen, Abdellah Haddout, Mariam Benhadou – <i>E-Maintenance and Industry 4.0: Empirical Insights and Statistical Validation of Performance Impacts</i></li>
+                <li>Mohamed El Aallami, Anass Cherrafi, Khadija Echefa, Said Elfezazi – <i>Prescriptive Maintenance in Automotive Manufacturing: Concepts, Theoretical Benefits and Potential Outcomes</i></li>
+                <li>Said El Bahloul, Maria Zrikem, Marc Zolghadri, Besma Zeddini – <i>Modeling and Simulation of Fleet Operational Availability</i></li>
+                <li>Housnane Majda, Hamza Ennadafy, Mustapha Jammoukh, Naoual Belouagadia – <i>Predictive and Resilient Approaches to Industrial Planning in Automotive Sector</i></li>
+                <li>Zineb Aktef, Anass Cherrafi, Khadija Echefa, Said Elfezazi – <i>Maintenance 4.0 vs. Maintenance 5.0: A Comparative Analysis</i></li>
+              </ul>
+            </div>
+            <div class="session-block session5">
+              <u>Session 5 – Big Data & Decision-Making for Sustainability</u><br>
+              <em>Chair : …</em>
+              <ul>
+                <li>Mariem Amedjar, Leila El Gnaoui, Abdessamad Belangour – <i>Big Data in Management Accounting: Strategies to Follow</i></li>
+                <li>Fatima Zahra El Garraoui, Abdelkabir Charkaoui, Khadija Echefa, Anass Cherrafi – <i>Decision Making in Supply Chain: Nash Game Applications</i></li>
+                <li>Nada Achoukhi and Meryem Akesbi – <i>Green and Digital Marketing Promoting Responsible Consumption</i></li>
+                <li>Abla El Abyad, Hajar Haouidge, Iman Aissa Ouhladou, Saloua Mihoubi, Touria Benazzouz – <i>Forecasting Methods for Intermittent Spare Parts Demand</i></li>
+                <li>Iman Aissa Ouhladou, Touria Benazzouz, Samya Dahbi – <i>From Compliance to Responsibility: Measuring Responsible Sourcing in Automotive Supply Chains</i></li>
+              </ul>
+            </div>
+          </td>
+        </tr>
+      </table>
+      `,
+      2: `
+      <div class="day-header">FRIDAY, OCTOBER 24</div>
+      <table class="session-table">
+        <tr>
+          <td>9H – 10H</td>
+          <td>
+            <span class="session-title">Plenary Talk 5: AI for vehicle Finite Element Modeling- Practical Use Case</span><br>
+            <strong>Mr. Mohamed Oumri</strong>, Technical Leader in Data Science, STELLANTIS, Morocco<br>
+            <em>Chair : Prof. Said EL BEID</em>
+          </td>
+        </tr>
+        <tr>
+          <td>10H – 10H45</td>
+          <td>
+            <span class="session-title">Plenary Talk 6 : Digital Supply Chain and Blockchain Technology: How to Unblock the Chain</span><br>
+            <strong>Dr. Jay Daniel</strong>, Professor of Digital Supply Chain and Technology Innovation Research Cluster Lead at the Centre for Supply Chain Improvement, Derby Business School, University of Derby, United Kingdom<br>
+            <em>Chair : Prof. Anas ABOU EL KALAM</em>
+          </td>
+        </tr>
+        <tr><td colspan="2" class="break">10H45– 11H15 &nbsp;|&nbsp; COFFEE BREAK</td></tr>
+        <tr>
+          <td>11H15– 12H00</td>
+          <td>
+            <span class="session-title">Plenary Talk 7 :</span><br>
+            <strong>Mr. Said El Beid</strong><br>
+            <em>Chair : Prof. Rachid BENMOUSSA</em>
+          </td>
+        </tr>
+        <tr><td colspan="2" class="break">12H15– 14H15 &nbsp;|&nbsp; LUNCH BREAK</td></tr>
+        <tr>
+          <td colspan="2">
+            <b>14H15 – 16H15 &nbsp;|&nbsp; PARALLEL TECHNICAL SESSIONS</b>
+            <div class="session-block session6">
+              <u>Session 6 – Digital Supply Chains: Risk, Resilience & Flexibility</u><br>
+              <em>Chair : …</em>
+              <ul>
+                <li>Nadia Hmitti and Ahmed Maghni – <i>Supply Chains, Digitalization And Risk Management</i></li>
+                <li>Safae Smili, Chafik Bensfia, Rahhal Lhrach, Nadia Tamouh – <i>Data-driven Technologies Applied to Logistics</i></li>
+                <li>Sanae Tissir, Abdelkabir Charkaoui, Khadija Echefa, Anass Cherrafi – <i>Resilience and Digitalization of Supply Chains in the Automotive Sector</i></li>
+                <li>Salma Toumi and Hicham Sarir – <i>Digital Transformation for Enhancing Resilience and Flexibility in Automotive Supply Chains under VUCA Conditions</i></li>
+                <li>Meryem Daanoune, Mohammed Khadir, Najoua Rhali, Rajae Hadi, Wafaa Taoufik, Omar Jammou – <i>SCRM and Logistic Resilience in the Era of Logistics 4.0</i></li>
+              </ul>
+            </div>
+            <div class="session-block session7">
+              <u>Session 7 – Lean, Six Sigma & Operational Excellence</u><br>
+              <em>Chair : …</em>
+              <ul>
+                <li>Abir Rachidi, Driss Serrou, Hassan Mharzi, Tchoffa David – <i>Integrating Industry 4.0 in Lean Manufacturing: A Review</i></li>
+                <li>Mohammed Hamoumi, Abdellah Haddout, Mariam Benhadou – <i>Logistics and Operational Excellence: A Moroccan Automotive Industry Study</i></li>
+                <li>Imane Boumissse, Mariam Benhadou, Abdellah Haddout – <i>Towards Operational Excellence in Industry 5.0</i></li>
+                <li>Ali Almuflih – <i>Bridging Strategy and Operations: Leveraging Six Sigma for Sustainable Quality and Organizational Excellence</i></li>
+                <li>Naif Almakayeel – <i>Advancing Manufacturing Performance: Lean Optimization Strategies for Robust Quality Control</i></li>
+              </ul>
+            </div>
+            <div class="session-block session8">
+              <u>Session 8 – Digital Solutions for Operational Excellence (Online Session)</u><br>
+              <em>Chair :</em>
+              <ul>
+                <li>Fatima Zahra Farih and Khadija Benazzi – <i>Digital Transformation and Supply Chain Resilience: A Systematic Review of Enabling Technologies</i></li>
+                <li>Bouchra Serroukh, Asmae Aakaou, Rahhal Lhrach, Aziz El Khazzar, Mohammed Réda Korikache – <i>Digital Transformation of Mediterranean Ports</i></li>
+                <li>Ouamaima El Affaki, Mariam Benhadou, Abdellah Haddout – <i>How does the IATF 16949 Standard Outperform ISO 9001 in Improving Operational Excellence?</i></li>
+              </ul>
+            </div>
+          </td>
+        </tr>
+        <tr><td colspan="2" class="gala">19H &nbsp;|&nbsp; GALA DINNER & AWARDS CEREMONY</td></tr>
+      </table>
+      `,
+      3: `
+      <div class="day-header">SATURDAY, OCTOBER 25</div>
+      <table class="session-table">
+        <tr>
+          <td>9H30 – 12H</td>
+          <td>
+            <b>Round Table:</b> <span style="color:#2c4fa1;">Academic Training and Digital Transformation: What Impact on Automotive and Aeronautical Industries?</span><br>
+            <strong>Moderator : Pr. Touria BENAZZOUZ, ENSA Marrakech, Cadi Ayyad University, Morocco</strong>
+          </td>
+        </tr>
+        <tr><td>12H– 13H</td><td class="remark">CLOSING REMARKS</td></tr>
+        <tr><td>13H– 14H</td><td class="break">LUNCH BREAK</td></tr>
+        <tr><td>14H– 18H30</td><td class="remark">SOCIAL ACTIVITY</td></tr>
+      </table>
+      `
+    };
+
+    // Mapping des chemins vers les fichiers PDF selon la nouvelle structure
+    const docPaths = {
+      // Session 1 - Artificial Intelligence Applications & Advanced Analytics
+      "Performance Evaluation of AI Models for Monitoring Automotive Component Traceability Data": "Sessions Word Abstracts/Session 1 - Artificial Intelligence Applications & Advanced Analytics/Performance Evaluation of AI Models for Monitoring Automotive Component Traceability Data.pdf",
+      "Impact of Artificial Intelligence on the Evolution of Performance Measurement in Supply Chain 4.0": "Sessions Word Abstracts/Session 1 - Artificial Intelligence Applications & Advanced Analytics/Impact of Artificial Intelligence on the Evolution of Performance Measurement in Supply Chain 4.0.pdf",
+      "The Role of Artificial Intelligence in E-commerce: A Comprehensive Review": "Sessions Word Abstracts/Session 1 - Artificial Intelligence Applications & Advanced Analytics/The role of artificial intelligence in optimizing ecommerce logistics.pdf",
+      "Demand Forecasting Under Uncertainty: Evaluating Statistical and Machine Learning Models": "Sessions Word Abstracts/Session 1 - Artificial Intelligence Applications & Advanced Analytics/Demand Forecasting Under Uncertainty- Evaluating Statistical and Machine Learning Models.pdf",
+      "AI-Driven Framework for Tax Fraud Detection: Application to Morocco": "Sessions Word Abstracts/Session 1 - Artificial Intelligence Applications & Advanced Analytics/А Theoreticаl АI-Driven Frаmework for Tаx Frаud.pdf",
+
+      // Session 2 - Industry 5.0 & Human-Centric Approaches  
+      "Resilient and Ethical Raw Material Sourcing in the Automotive Industry: An Industry 5.0 Case Study of BMW's Cobalt Sourcing": "pdfs/resilient-sourcing.pdf",
+      "Synergies between Circular Economy and Operational Excellence in Industry 5.0": "Sessions Word Abstracts/Session 2 - Industry 5.0 & Human-Centric Approaches/Synergies between Circular Economy and Operational Excellence in Industry 5.0.pdf",
+      "Assessing Human-Centricity in Supply Chains": "Sessions Word Abstracts/Session 2 - Industry 5.0 & Human-Centric Approaches/Assessing Human-Centricity in Supply Chains.pdf",
+      "Impact of Organizational and Technological Innovation on Firm Performance": "Sessions Word Abstracts/Session 2 - Industry 5.0 & Human-Centric Approaches/Impact of Organizational and Technological Innovation on Firm Performance.pdf",
+      "Digital Twin-Driven Ergonomic Risk Forecasting in Manufacturing Assembly": "Sessions Word Abstracts/Session 2 - Industry 5.0 & Human-Centric Approaches/Digital Twin-Driven Ergonomic Risk Forecasting in Manufacturing Assembly.pdf",
+
+      // Session 3 - Sustainable Manufacturing: Quality, Traceability and Certification (Online Session)
+      "Blockchain-Based Waste Energy Traceability in the Leather Industry": "Sessions Word Abstracts/Session 3 – Sustainable Manufacturing Quality, Traceability and Certification (Online Session)/Blockchain-Based Waste Energy Traceability in the Leather Industry.pdf",
+      "Reinventing Quality Problem Solving in the Manufacturing Industry: A Scoping Review of Traditional Approaches Limitations": "Sessions Word Abstracts/Session 3 – Sustainable Manufacturing Quality, Traceability and Certification (Online Session)/Reinventing Quality Problem Solving in the Manufacturing Industry.pdf",
+      "Three-Layer Framework for Sustainable Digital Supply Chains": "Sessions Word Abstracts/Session 3 – Sustainable Manufacturing Quality, Traceability and Certification (Online Session)/Three-Layer Framework for Sustainable Digital Supply Chains.pdf",
+      "How Is IATF 16949:2016 Certification Improving the Automotive Ecosystem?": "Sessions Word Abstracts/Session 3 – Sustainable Manufacturing Quality, Traceability and Certification (Online Session)/How Is IATF 16949-2016 Certification Improving the Automotive Ecosystem.pdf",
+
+      // Session 4 - Maintenance 4.0 & Predictive Approaches
+      "E-Maintenance and Industry 4.0: Empirical Insights and Statistical Validation of Performance Impacts": "Sessions Word Abstracts/Session 4 – Maintenance 4.0 & Predictive Approaches/E-Maintenance and Industry 4.0- Empirical Insights and Statistical Validation of Performance Impacts.pdf",
+      "Prescriptive Maintenance in Automotive Manufacturing: Concepts, Theoretical Benefits and Potential Outcomes": "Sessions Word Abstracts/Session 4 – Maintenance 4.0 & Predictive Approaches/Prescriptive Maintenance in Automotive Manufacturing- Concepts, Theoretical Benefits and Potential Outcomes.pdf",
+      "Modeling and Simulation of Fleet Operational Availability": "Sessions Word Abstracts/Session 4 – Maintenance 4.0 & Predictive Approaches/Modeling and Simulation of Fleet Operational Availability.pdf",
+      "Predictive and Resilient Approaches to Industrial Planning in Automotive Sector": "Sessions Word Abstracts/Session 4 – Maintenance 4.0 & Predictive Approaches/Predictive and Resilient Approaches to Industrial Planning in Automotive Sector.pdf",
+      "Maintenance 4.0 vs. Maintenance 5.0: A Comparative Analysis": "Sessions Word Abstracts/Session 4 – Maintenance 4.0 & Predictive Approaches/Maintenance 4.0 vs. Maintenance 5.0- A Comparative Analysis.pdf",
+
+      // Session 5 - Big Data & Decision-Making for Sustainability
+      "Big Data in Management Accounting: Strategies to Follow": "Sessions Word Abstracts/Session 5 – Big Data & Decision-Making for Sustainability/Big Data in Management Accounting- Strategies to Follow.pdf",
+      "Decision Making in Supply Chain: Nash Game Applications": "Sessions Word Abstracts/Session 5 – Big Data & Decision-Making for Sustainability/Decision Making in Supply Chain- Nash Game Applications.pdf",
+      "Green and Digital Marketing Promoting Responsible Consumption": "Sessions Word Abstracts/Session 5 – Big Data & Decision-Making for Sustainability/Green and Digital Marketing Promoting Responsible Consumption.pdf",
+      "Forecasting Methods for Intermittent Spare Parts Demand": "Sessions Word Abstracts/Session 5 – Big Data & Decision-Making for Sustainability/Forecasting Methods for Intermittent Spare Parts Demand.pdf",
+      "From Compliance to Responsibility: Measuring Responsible Sourcing in Automotive Supply Chains": "Sessions Word Abstracts/Session 5 – Big Data & Decision-Making for Sustainability/From Compliance to Responsibility Measuring Responsible Sourcing in Automotive Supply Chains.pdf",
+
+      // Session 6 - Digital Supply Chains: Risk, Resilience & Flexibility
+      "Supply Chains, Digitalization And Risk Management": "Sessions Word Abstracts/Session 6 – Digital Supply Chains Risk, Resilience & Flexibility/Supply Chains, Digitalization And Risk Management.pdf",
+      "Data-driven Technologies Applied to Logistics": "Sessions Word Abstracts/Session 6 – Digital Supply Chains Risk, Resilience & Flexibility/Data-driven Technologies Applied to Logistics.pdf",
+      "Resilience and Digitalization of Supply Chains in the Automotive Sector": "Sessions Word Abstracts/Session 6 – Digital Supply Chains Risk, Resilience & Flexibility/Resilience and Digitalization of Supply Chains in the Automotive Sector.pdf",
+      "Digital Transformation for Enhancing Resilience and Flexibility in Automotive Supply Chains under VUCA Conditions": "Sessions Word Abstracts/Session 6 – Digital Supply Chains Risk, Resilience & Flexibility/Digital Transformation for Enhancing Resilience and Flexibility in Automotive Supply Chains under VUCA Conditions.pdf",
+      "SCRM and Logistic Resilience in the Era of Logistics 4.0": "Sessions Word Abstracts/Session 6 – Digital Supply Chains Risk, Resilience & Flexibility/SCRM and Logistic Resilience in the Era of Logistics 4.0.pdf",
+
+      // Session 7 - Lean, Six Sigma & Operational Excellence
+      "Integrating Industry 4.0 in Lean Manufacturing: A Review": "Sessions Word Abstracts/Session 7 – Lean, Six Sigma & Operational Excellence/Integrating Industry 4.0 in Lean Manufacturing- A Review.pdf",
+      "Logistics and Operational Excellence: A Moroccan Automotive Industry Study": "Sessions Word Abstracts/Session 7 – Lean, Six Sigma & Operational Excellence/Logistics and Operational Excellence- A Moroccan Automotive Industry Study.pdf",
+      "Towards Operational Excellence in Industry 5.0": "Sessions Word Abstracts/Session 7 – Lean, Six Sigma & Operational Excellence/Towards Operational Excellence in Industry 5.0.pdf",
+      "Bridging Strategy and Operations: Leveraging Six Sigma for Sustainable Quality and Organizational Excellence": "Sessions Word Abstracts/Session 7 – Lean, Six Sigma & Operational Excellence/Bridging Strategy and Operations Leveraging Six Sigma for Sustainable Quality and Organizational Excellence.pdf",
+      "Advancing Manufacturing Performance: Lean Optimization Strategies for Robust Quality Control": "Sessions Word Abstracts/Session 7 – Lean, Six Sigma & Operational Excellence/Advancing Manufacturing Performance Lean Optimization Strategies for Robust Quality Control.pdf",
+
+      // Session 8 - Digital Solutions for Operational Excellence (Online Session)
+      "Digital Transformation and Supply Chain Resilience: A Systematic Review of Enabling Technologies": "Sessions Word Abstracts/Session 8 – Digital Solutions for Operational Excellence (Online Session)/Digital Transformation and Supply Chain Resilience- A Systematic Review of Enabling Technologies.pdf",
+      "Digital Transformation of Mediterranean Ports": "Sessions Word Abstracts/Session 8 – Digital Solutions for Operational Excellence (Online Session)/Digital Transformation of Mediterranean Ports.pdf",
+      "How does the IATF 16949 Standard Outperform ISO 9001 in Improving Operational Excellence?": "Sessions Word Abstracts/Session 8 – Digital Solutions for Operational Excellence (Online Session)/How does the IATF 16949 Standard Outperform ISO 9001 in Improving Operational Excellence.pdf"
+    };
+
+    // Fonction utilitaire: échappe les caractères pour une URL relative correcte
+    function urlEncodePath(path) {
+      return path.split('/').map(encodeURIComponent).join('/');
+    }
+
+    // Après insertion du programme dans #programme, on transforme les <li> correspondants en liens
+    // Version asynchrone : essaye d'utiliser le .pdf si disponible, sinon retombe sur le .docx/.docm
+    async function linkifyProgramme() {
+      const container = document.getElementById('programme');
+      if (!container) return;
+      const lis = Array.from(container.querySelectorAll('li'));
+      
+      await Promise.all(lis.map(async (li) => {
+        const text = li.textContent.trim().replace(/\s+/g,' ');
+        
+        // Extraire le titre (partie après le tiret –)
+        const titleMatch = text.match(/–\s*(.+)$/);
+        const extractedTitle = titleMatch ? titleMatch[1].trim() : text;
+        
+        // Normaliser les chaînes pour la comparaison
+        const normalizeString = (str) => str.replace(/\s+/g, ' ').trim().toLowerCase();
+        const normalizedExtracted = normalizeString(extractedTitle);
+        
+        // Chercher une correspondance dans docPaths
+        let matchedKey = null;
+        for (const key in docPaths) {
+          if (!Object.prototype.hasOwnProperty.call(docPaths, key)) continue;
+          
+          const normalizedKey = normalizeString(key);
+          
+
+          
+          // Correspondance exacte ou normalisée
+          if (key === extractedTitle || normalizedKey === normalizedExtracted) {
+            matchedKey = key;
+            break;
+          }
+        }
+        
+        if (!matchedKey) return; // Pas de correspondance trouvée
+        
+        // Si on arrive ici, on a trouvé une correspondance
+        const pdfPath = docPaths[matchedKey];
+        
+        // Encoder correctement l'URL pour XAMPP
+        const encodedPath = pdfPath.split('/').map(part => encodeURIComponent(part)).join('/');
+        
+        // Créer le lien avec l'URL encodée
+        const a = document.createElement('a');
+        a.href = encodedPath;
+        a.target = '_blank';
+        a.rel = 'noopener';
+        li.parentNode.replaceChild(a, li);
+        a.appendChild(li);
+      }));
+    }
+
+    // Bouton actif visuel
+    function selectBtn(idx) {
+      for(let i=1;i<=3;i++) document.getElementById('btn'+i).classList.remove('selected');
+      if (idx) document.getElementById('btn'+idx).classList.add('selected');
+    }
+    // Affichage programme
+    async function showProgramme(idx) {
+      selectBtn(idx);
+      document.getElementById('programme').innerHTML = programmes[idx] || '';
+      // transform list items into links when appropriate (prefère PDF si disponible)
+      await linkifyProgramme();
+      window.scrollTo({top: 0, behavior: 'smooth'});
+    }
+    // NOTE: On purpose no default showProgramme(...) call so rien n'est affiché jusqu'à ce qu'un utilisateur clique sur un jour.
+  </script>
+</body>
+</html>
