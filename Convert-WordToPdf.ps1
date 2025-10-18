@@ -6,8 +6,12 @@ try {
     Add-Type -AssemblyName Microsoft.Office.Interop.Word
     $word = New-Object -ComObject Word.Application
     $word.Visible = $false
+    # Eviter les boites de dialogue et les invites liées aux macros (docm)
+    $word.DisplayAlerts = 0
+    try { $word.AutomationSecurity = 3 } catch { }
     
-    $basePath = "Sessions Word Abstracts"
+    # Utilise le chemin du script comme base, pour être robuste où qu'il soit appelé
+    $basePath = Join-Path $PSScriptRoot "Sessions Word Abstracts"
     $converted = 0
     $errors = 0
     $skipped = 0
@@ -57,5 +61,4 @@ catch {
     Write-Host "Assurez-vous que Microsoft Word est installe." -ForegroundColor Yellow
 }
 
-Write-Host "Appuyez sur Entree pour continuer..."
-Read-Host
+# Exécution non interactive

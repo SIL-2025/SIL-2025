@@ -3,12 +3,14 @@ Add-Type -AssemblyName Microsoft.Office.Interop.Word
 
 $word = New-Object -ComObject Word.Application
 $word.Visible = $false
+$word.DisplayAlerts = 0
+try { $word.AutomationSecurity = 3 } catch { }
 
 # Fonction pour convertir un fichier
 function Convert-WordToPdf {
     param($InputPath, $OutputPath)
     try {
-        $doc = $word.Documents.Open($InputPath)
+    $doc = $word.Documents.Open($InputPath)
         $doc.SaveAs2($OutputPath, 17) # 17 = PDF format
         $doc.Close()
         Write-Host "Converti: $InputPath -> $OutputPath"
@@ -19,7 +21,8 @@ function Convert-WordToPdf {
 }
 
 # Parcourir tous les dossiers de session
-$basePath = "c:\xampp\htdocs\code qr\qrcode-gil-event\Sessions Word Abstracts"
+# Utiliser le dossier où se trouve ce script comme base, pour éviter les chemins absolus obsolètes
+$basePath = $PSScriptRoot
 Get-ChildItem -Path $basePath -Directory | ForEach-Object {
     $sessionPath = $_.FullName
     Write-Host "Traitement du dossier: $($_.Name)"
