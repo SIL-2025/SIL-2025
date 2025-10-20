@@ -1,0 +1,68 @@
+﻿
+
+    Répertoire: C:\xampp\htdocs\SIL'2025\SIL-2025\Sessions Word 
+    Abstracts\Session 1 - Artificial Intelligence Applications & 
+    Advanced Analytics
+
+
+Mode                 LastWriteTime         Length Name                   
+----                 -------------         ------ ----                   
+-a----        04/10/2025     17:19          19107 Demand Forecasting     
+                                                  Under Uncertainty-     
+                                                  Evaluating Statistical 
+                                                  and Machine Learning   
+                                                  Models.docx            
+-a----        18/10/2025     21:10         151302 Demand Forecasting     
+                                                  Under Uncertainty-     
+                                                  Evaluating Statistical 
+                                                  and Machine Learning   
+                                                  Models.pdf             
+-a----        20/10/2025     00:09              0 filelist2.txt          
+-a----        10/10/2025     16:40          33736 Impact of Artificial   
+                                                  Intelligence on the    
+                                                  Evolution of           
+                                                  Performance            
+                                                  Measurement in Supply  
+                                                  Chain 4.0.docx         
+-a----        18/10/2025     21:10          99754 Impact of Artificial   
+                                                  Intelligence on the    
+                                                  Evolution of           
+                                                  Performance            
+                                                  Measurement in Supply  
+                                                  Chain 4.0.pdf          
+-a----        04/10/2025     17:16          20177 Performance Evaluation 
+                                                  of AI Models for       
+                                                  Monitoring Automotive  
+                                                  Component Traceability 
+                                                  Data.docx              
+-a----        18/10/2025     21:10         107537 Performance Evaluation 
+                                                  of AI Models for       
+                                                  Monitoring Automotive  
+                                                  Component Traceability 
+                                                  Data.pdf               
+-a----        10/10/2025     17:33         124683 The role of artificial 
+                                                  intelligence in        
+                                                  optimizing ecommerce   
+                                                  logistics-A Literature 
+                                                  Review.docm            
+-a----        18/10/2025     23:28         124782 The role of artificial 
+                                                  intelligence in        
+                                                  optimizing ecommerce   
+                                                  logistics-A Literature 
+                                                  Review.pdf             
+-a----        04/10/2025     17:28          18444 А Theoreticаl          
+                                                  АI-Driven Frаmework    
+                                                  for Tаx Frаud          
+                                                  Detection in Emerging  
+                                                  Economies’ Industriаl  
+                                                  Ecosystems             
+                                                  Аpplicаtion.docx       
+-a----        18/10/2025     23:26         105424 А Theoreticаl          
+                                                  АI-Driven Frаmework    
+                                                  for Tаx Frаud          
+                                                  Detection in Emerging  
+                                                  Economies’ Industriаl  
+                                                  Ecosystems             
+                                                  Аpplicаtion.pdf        
+
+

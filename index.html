@@ -27,6 +27,8 @@
     .session7 { background: #fae1cc; }
     .online { background: #fae1cc; }
     .break, .gala, .remark { background: #f3f3f3; font-style: italic; }
+    /* Indiquer visuellement un lien PDF manquant */
+    a.broken-link, a.broken-link i { color:#c62828 !important; text-decoration: underline wavy #c62828; }
     @media (max-width: 650px) {
       .container { padding: 8px;}
       .session-table th, .session-table td { font-size: 0.96em; }
@@ -227,7 +229,7 @@
                 <li>Mariem Amedjar, Leila El Gnaoui, Abdessamad Belangour – <i>Big Data in Management Accounting: Strategies to Follow</i></li>
                 <li>Fatima Zahra El Garraoui, Abdelkabir Charkaoui, Khadija Echefaj, Anass Cherrafi – <i>Decision making in supply chain: Recent trends and applications of Nash game</i></li>
                 <li>Nada Achoukhi and Meryem Akesbi – <i>Green and Digital Marketing Promoting Responsible Consumption: A Systematic and Bibliometric Analysis</i></li>
-                <li>Abla El Abyad, Hajar Haouideg, Iman Aissa Ouhadou, Saloua Mihoubi, Touria Benazzouz – <i>Intermittent Spare Parts Demand Forecasting Methods in the Automotive Assembly Industry</i></li>
+                <li>Abla El Abyad, Saloua Mihoubi, Iman Aissa Ouhadou, Hajar Haouideg, Touria Benazzouz – <i>Intermittent Spare Parts Demand Forecasting Methods in the Automotive Assembly Industry</i></li>
                 <li>Iman Aissa Ouhadou, Touria Benazzouz, Samya Dahbi – <i>From Compliance to Responsibility: Measuring Responsible Sourcing in Automotive Supply Chains</i></li>
               </ul>
             </div>
@@ -259,9 +261,8 @@
         <tr>
           <td>11H15– 12H00</td>
           <td>
-            <span class="session-title">Plenary Talk 7 :</span><br>
-            <strong>Mr. Said El Beid</strong><br>
-            <em>Chair : Prof. Rachid BENMOUSSA</em>
+            <span class="session-title">Plenary Talk 7 : L'innovation solaire au cœur de la transformation énergétique et digitale des industries</span><br>
+            Mr. Said El Beid, Professor in Electrical Engineering, ENSA Marrakech, Cadi Ayyad University, Morocco<br>
           </td>
         </tr>
         <tr><td colspan="2" class="break">12H15– 14H15 &nbsp;|&nbsp; LUNCH BREAK</td></tr>
@@ -273,9 +274,9 @@
               <em>Chair : Prof. Abdelmounaim AGGOUR</em><br>
               <span style="font-size:0.95em">Room: 11</span>
               <ul>
-                <li>Nadia Hmitti and Ahmed Maghni – <i>Supply Chains, Digitalization And Risk Management</i></li>
-                <li>Safae Smili, Chafik Bensfia, Rahhal Lhrach, Nadia Tamouh – <i>Data-driven Technologies Applied to Logistics</i></li>
-                <li>Sanae Tissir, Abdelkabir Charkaoui, Khadija Echefaj, Anass Cherrafi – <i>Resilience and Digitalization of Supply Chains in the Automotive Sector</i></li>
+                <li>Nadia Hmitti and Ahmed Maghni – <i>Supply Chains, Digitalization And Risk Management - TOWARDS AN INTEGRATED APPROACH</i></li>
+                <li>Safae Smili, Chafik Bensfia, Rahhal Lhrach, Nadia Tamouh – <i>Data-driven Technologies Applied to Logistics-Systemic and Bibliometric Review</i></li>
+                <li>Sanae Tissir, Abdelkabir Charkaoui, Khadija Echefaj, Anass Cherrafi – <i>Resilience and Digitalization of Supply Chains Analysis of Digital Maturity, Systemic Risks, and Mitigation Strategies</i></li>
                 <li>Salma Toumi and Hicham Sarir – <i>Digital Transformation for Enhancing Resilience and Flexibility in Automotive Supply Chains under VUCA Conditions</i></li>
                 <li>Meryem Daanoune, Mohammed Khadir, Najoua Rhali, Rajae Hadi, Wafaa Taoufik, Omar Jammou – <i>SCRM and Logistic Resilience in the Era of Logistics 4.0</i></li>
               </ul>
@@ -285,20 +286,22 @@
               <em>Chair : Prof. Lamia HAMMADI</em><br>
               <span style="font-size:0.95em">Room: 12</span>
               <ul>
-                <li>Abir Rachidi, Driss Serrou, Hassan Mharzi, Tchoffa David – <i>Integrating Industry 4.0 in Lean Manufacturing: A Review</i></li>
-                <li>Mohammed Hamoumi, Abdellah Haddout, Mariam Benhadou – <i>Logistics and Operational Excellence: A Moroccan Automotive Industry Study</i></li>
-                <li>Imane Boumissse, Mariam Benhadou, Abdellah Haddout – <i>Towards Operational Excellence in Industry 5.0</i></li>
-                <li>Ali Almuflih – <i>Bridging Strategy and Operations: Leveraging Six Sigma for Sustainable Quality and Organizational Excellence</i></li>
-                <li>Naif Almakayeel – <i>Advancing Manufacturing Performance: Lean Optimization Strategies for Robust Quality Control</i></li>
+                <li>Abir Rachidi, Driss Serrou, Hassan Mharzi, Tchoffa David – <i>Integrating Industry 4.0 in Lean Manufacturing- A Review</i></li>
+                <li>Mohammed Hamoumi, Abdellah Haddout, Mariam Benhadou – <i>Logistics and Operational Excellence- A Moroccan Automotive Industry Study</i></li>
+                <li>Imane Boumissse, Mariam Benhadou, Abdellah Haddout – <i>Towards Operational Excellence in the Era of Industry 5.0 A Systemic Model Integrating Human-Centric Technologies and Sustainable P</i></li>
+                <li>Ali Almuflih – <i>Bridging Strategy and Operations Leveraging Six Sigma for Sustainable Quality and Organizational Excellence</i></li>
+                <li>Naif Almakayeel – <i>Advancing Manufacturing Performance Lean Optimization Strategies for Robust Quality Control</i></li>
               </ul>
             </div>
             <div class="session-block session8">
-              <u>Session 8 – Digital Solutions for Operational Excellence (Online Session)</u><br>
+              <u>Session 8 – Digital Solutions for Operational Excellence (Hybride Session)</u><br>
               <em>Chair :</em>
               <ul>
-                <li>Fatima Zahra Farih and Khadija Benazzi – <i>Digital Transformation and Supply Chain Resilience: A Systematic Review of Enabling Technologies</i></li>
-                <li>Bouchra Serroukh, Asmae Aakaou, Rahhal Lhrach, Aziz El Khazzar, Mohammed Réda Korikache – <i>Digital Transformation of Mediterranean Ports</i></li>
-                <li>Ouamaima El Affaki, Mariam Benhadou, Abdellah Haddout – <i>How does the IATF 16949 Standard Outperform ISO 9001 in Improving Operational Excellence?</i></li>
+                <li>Fatima Zahra Farih and Khadija Benazzi – <i>Digital Transformation and Supply Chain Resilience- A Systematic Review of Enabling Technologies</i></li>
+                <li>Bouchra Serroukh, Asmae Aakaou, Rahhal Lhrach, Aziz El Khazzar, Mohammed Réda Korikache – <i>Impact on Sustainable Performance Through the Perspective of the TOE Framework and Sustainable Innovation Capa</i></li>
+                <li>Ouamaima El Affaki, Mariam Benhadou, Abdellah Haddout – <i>How does the IATF 16949 Standard Outperform ISO 9001 in Improving Operational Excellence An Empirical and Comp</i></li>
+                <li>Meriem BELAID, Said EL BEID, Said DOUBABI, Hatim ANAS – <i>Dynamic Game-Theoretic Cooperative PWM-Based Energy Management for EV Charging Infrastructures</i></li>
+                <li>Touria BENAZZOUZ, Iman AISSAOUHADOU, Saloua MIHOUBI, Samya DAHBI, Rachid BENMOUSSA – <i>Digital Twin-Driven, Human-Centric Ergonomic Risk Forecasting in Manufacturing Assembly: Collective Case Study</i></li>
               </ul>
             </div>
           </td>
@@ -313,7 +316,7 @@
         <tr>
           <td>9H30 – 12H</td>
           <td>
-            <b>Round Table:</b> <span style="color:#2c4fa1;">Academic Training and Digital Transformation: What Impact on Automotive and Aeronautical Industries?</span><br>
+            <b>Round Table:</b> <span>Academic Training and Digital Transformation: What Impact on Automotive and Aeronautical Industries?</span><br>
             <strong>Moderator : Pr. Touria BENAZZOUZ, ENSA Marrakech, Cadi Ayyad University, Morocco</strong>
           </td>
         </tr>
@@ -331,10 +334,10 @@
       "Impact of Artificial Intelligence on the Evolution of Performance Measurement in Supply Chain 4.0": "Sessions Word Abstracts/Session 1 - Artificial Intelligence Applications & Advanced Analytics/Impact of Artificial Intelligence on the Evolution of Performance Measurement in Supply Chain 4.0.pdf",
   "The Role of AI in optimizing E-commerce logistics: A Literature Review": "Sessions Word Abstracts/Session 1 - Artificial Intelligence Applications & Advanced Analytics/The role of artificial intelligence in optimizing ecommerce logistics-A Literature Review.pdf",
       "Demand Forecasting Under Uncertainty: Evaluating the Robustness of Statistical and Machine Learning Models": "Sessions Word Abstracts/Session 1 - Artificial Intelligence Applications & Advanced Analytics/Demand Forecasting Under Uncertainty- Evaluating Statistical and Machine Learning Models.pdf",
-      "A Theoretical AI-Driven Framework for Tax Fraud Detection in Emerging Economies' Industrial Ecosystems: Application to Morocco": "Sessions Word Abstracts/Session 1 - Artificial Intelligence Applications & Advanced Analytics/А Theoreticаl АI-Driven Frаmework for Tаx Frаud Detection in Emerging Economies' Industriаl Ecosystems Аpplicаtion.pdf",
+  "A Theoretical AI-Driven Framework for Tax Fraud Detection in Emerging Economies’ Industrial Ecosystems: Application to Morocco": "Sessions Word Abstracts/Session 1 - Artificial Intelligence Applications & Advanced Analytics/A-Theoretical-AI-Driven-Framework-Tax-Fraud-Detection-Industrial-Ecosystems-Application.pdf",
 
       // Session 2 - Industry 5.0 & Human-Centric Approaches  
-      "Resilient and Ethical Raw Material Sourcing in Automotive Industry: An Industry 5.0 Case Study of BMW's Cobalt Sourcing": "Sessions Word Abstracts/Session 2 – Industry 5.0 & Human-Centric Approaches/Resilient and Ethical Raw Material Sourcing in the Automotive Industry An Industry 5.0 Case Study of BMW's Cobalt Sourcing.pdf",
+  "Resilient and Ethical Raw Material Sourcing in Automotive Industry: An Industry 5.0 Case Study of BMW's Cobalt Sourcing": "Sessions Word Abstracts/Session 2 – Industry 5.0 & Human-Centric Approaches/Resilient-and-Ethical-Raw-Material-Sourcing-in-Automotive-Industry-An-Industry-5.0-Case-Study-of-BMWs-Cobalt-Sourcing.pdf",
       "Conceptualizing the Synergies between Circular Economy and Operational Excellence in the Era of Industry 5.0": "Sessions Word Abstracts/Session 2 – Industry 5.0 & Human-Centric Approaches/Synergies between Circular Economy and Operational Excellence in Industry 5.0.pdf",
       "Assessing Human-Centricity in Manufacturing Supply Chains: A Framework for Industry 5.0 Transition": "Sessions Word Abstracts/Session 2 – Industry 5.0 & Human-Centric Approaches/Assessing Human-Centricity in Manufacturing Supply Chains A Framework for Industry 5.0 Transition.pdf",
       "Impact of organizational and technological innovation on firm performance – literature review": "Sessions Word Abstracts/Session 2 – Industry 5.0 & Human-Centric Approaches/Impact of Organizational and Technological Innovation on Firm Performance Literature Review.pdf",
@@ -362,22 +365,36 @@
 
       // Session 6 - Digital Supply Chains: Risk, Resilience & Flexibility
       "Supply Chains, Digitalization And Risk Management": "Sessions Word Abstracts/Session 6 – Digital Supply Chains Risk, Resilience & Flexibility/Supply Chains, Digitalization And Risk Management - TOWARDS AN INTEGRATED APPROACH.pdf",
+  "Supply Chains, Digitalization And Risk Management - TOWARDS AN INTEGRATED APPROACH": "Sessions Word Abstracts/Session 6 – Digital Supply Chains Risk, Resilience & Flexibility/Supply Chains, Digitalization And Risk Management - TOWARDS AN INTEGRATED APPROACH.pdf",
       "Data-driven Technologies Applied to Logistics": "Sessions Word Abstracts/Session 6 – Digital Supply Chains Risk, Resilience & Flexibility/Data-driven Technologies Applied to Logistics-Systemic and Bibliometric Review.pdf",
+  "Data-driven Technologies Applied to Logistics-Systemic and Bibliometric Review": "Sessions Word Abstracts/Session 6 – Digital Supply Chains Risk, Resilience & Flexibility/Data-driven Technologies Applied to Logistics-Systemic and Bibliometric Review.pdf",
       "Resilience and Digitalization of Supply Chains in the Automotive Sector": "Sessions Word Abstracts/Session 6 – Digital Supply Chains Risk, Resilience & Flexibility/Resilience and Digitalization of Supply Chains Analysis of Digital Maturity, Systemic Risks, and Mitigation Strategies.pdf",
+  "Resilience and Digitalization of Supply Chains Analysis of Digital Maturity, Systemic Risks, and Mitigation Strategies": "Sessions Word Abstracts/Session 6 – Digital Supply Chains Risk, Resilience & Flexibility/Resilience and Digitalization of Supply Chains Analysis of Digital Maturity, Systemic Risks, and Mitigation Strategies.pdf",
       "Digital Transformation for Enhancing Resilience and Flexibility in Automotive Supply Chains under VUCA Conditions": "Sessions Word Abstracts/Session 6 – Digital Supply Chains Risk, Resilience & Flexibility/Digital Transformation for Enhancing Resilience and Flexibility in Automotive Supply Chains under VUCA Conditions.pdf",
       "SCRM and Logistic Resilience in the Era of Logistics 4.0": "Sessions Word Abstracts/Session 6 – Digital Supply Chains Risk, Resilience & Flexibility/SCRM and Logistic Resilience in the Era of Logistics 4.0.pdf",
 
       // Session 7 - Lean, Six Sigma & Operational Excellence
-      "Integrating Industry 4.0 in Lean Manufacturing: A Review": "Sessions Word Abstracts/Session 7 – Lean, Six Sigma & Operational Excellence/Integrating Industry 4.0 in Lean Manufacturing- A Review.pdf",
-      "Logistics and Operational Excellence: A Moroccan Automotive Industry Study": "Sessions Word Abstracts/Session 7 – Lean, Six Sigma & Operational Excellence/Logistics and Operational Excellence- A Moroccan Automotive Industry Study.pdf",
-      "Towards Operational Excellence in Industry 5.0": "Sessions Word Abstracts/Session 7 – Lean, Six Sigma & Operational Excellence/Towards Operational Excellence in the Era of Industry 5.0 A Systemic Model Integrating Human-Centric Technologies and Sustainable P.pdf",
-      "Bridging Strategy and Operations: Leveraging Six Sigma for Sustainable Quality and Organizational Excellence": "Sessions Word Abstracts/Session 7 – Lean, Six Sigma & Operational Excellence/Bridging Strategy and Operations Leveraging Six Sigma for Sustainable Quality and Organizational Excellence.pdf",
-      "Advancing Manufacturing Performance: Lean Optimization Strategies for Robust Quality Control": "Sessions Word Abstracts/Session 7 – Lean, Six Sigma & Operational Excellence/Advancing Manufacturing Performance Lean Optimization Strategies for Robust Quality Control.pdf",
+  "Integrating Industry 4.0 in Lean Manufacturing: A Review": "Sessions Word Abstracts/Session 7 – Lean, Six Sigma & Operational Excellence/Integrating Industry 4.0 in Lean Manufacturing- A Review.pdf",
+  "Integrating Industry 4.0 in Lean Manufacturing- A Review": "Sessions Word Abstracts/Session 7 – Lean, Six Sigma & Operational Excellence/Integrating Industry 4.0 in Lean Manufacturing- A Review.pdf",
+  "Logistics and Operational Excellence: A Moroccan Automotive Industry Study": "Sessions Word Abstracts/Session 7 – Lean, Six Sigma & Operational Excellence/Logistics and Operational Excellence- A Moroccan Automotive Industry Study.pdf",
+  "Logistics and Operational Excellence- A Moroccan Automotive Industry Study": "Sessions Word Abstracts/Session 7 – Lean, Six Sigma & Operational Excellence/Logistics and Operational Excellence- A Moroccan Automotive Industry Study.pdf",
+  "Towards Operational Excellence in Industry 5.0": "Sessions Word Abstracts/Session 7 – Lean, Six Sigma & Operational Excellence/Towards Operational Excellence in the Era of Industry 5.0 A Systemic Model Integrating Human-Centric Technologies and Sustainable P.pdf",
+  "Towards Operational Excellence in the Era of Industry 5.0 A Systemic Model Integrating Human-Centric Technologies and Sustainable P": "Sessions Word Abstracts/Session 7 – Lean, Six Sigma & Operational Excellence/Towards Operational Excellence in the Era of Industry 5.0 A Systemic Model Integrating Human-Centric Technologies and Sustainable P.pdf",
+  "Bridging Strategy and Operations: Leveraging Six Sigma for Sustainable Quality and Organizational Excellence": "Sessions Word Abstracts/Session 7 – Lean, Six Sigma & Operational Excellence/Bridging Strategy and Operations Leveraging Six Sigma for Sustainable Quality and Organizational Excellence.pdf",
+  "Bridging Strategy and Operations Leveraging Six Sigma for Sustainable Quality and Organizational Excellence": "Sessions Word Abstracts/Session 7 – Lean, Six Sigma & Operational Excellence/Bridging Strategy and Operations Leveraging Six Sigma for Sustainable Quality and Organizational Excellence.pdf",
+  "Advancing Manufacturing Performance: Lean Optimization Strategies for Robust Quality Control": "Sessions Word Abstracts/Session 7 – Lean, Six Sigma & Operational Excellence/Advancing Manufacturing Performance Lean Optimization Strategies for Robust Quality Control.pdf",
+  "Advancing Manufacturing Performance Lean Optimization Strategies for Robust Quality Control": "Sessions Word Abstracts/Session 7 – Lean, Six Sigma & Operational Excellence/Advancing Manufacturing Performance Lean Optimization Strategies for Robust Quality Control.pdf",
 
       // Session 8 - Digital Solutions for Operational Excellence (Online Session)
-      "Digital Transformation and Supply Chain Resilience: A Systematic Review of Enabling Technologies": "Sessions Word Abstracts/Session 8 – Digital Solutions for Operational Excellence (Online Session)/Digital Transformation and Supply Chain Resilience- A Systematic Review of Enabling Technologies.pdf",
-      "Digital Transformation of Mediterranean Ports": "Sessions Word Abstracts/Session 8 – Digital Solutions for Operational Excellence (Online Session)/Impact on Sustainable Performance Through the Perspective of the TOE Framework and Sustainable Innovation Capa.pdf",
-  "How does the IATF 16949 Standard Outperform ISO 9001 in Improving Operational Excellence?": "Sessions Word Abstracts/Session 8 – Digital Solutions for Operational Excellence (Online Session)/How does the IATF 16949 Standard Outperform ISO 9001 in Improving Operational Excellence An Empirical and Comp.pdf"
+    "Digital Transformation and Supply Chain Resilience: A Systematic Review of Enabling Technologies": "Sessions Word Abstracts/Session 8 – Digital Solutions for Operational Excellence (Online Session)/Digital Transformation and Supply Chain Resilience- A Systematic Review of Enabling Technologies.pdf",
+    "Digital Transformation and Supply Chain Resilience- A Systematic Review of Enabling Technologies": "Sessions Word Abstracts/Session 8 – Digital Solutions for Operational Excellence (Online Session)/Digital Transformation and Supply Chain Resilience- A Systematic Review of Enabling Technologies.pdf",
+    "Digital Transformation of Mediterranean Ports": "Sessions Word Abstracts/Session 8 – Digital Solutions for Operational Excellence (Online Session)/Impact on Sustainable Performance Through the Perspective of the TOE Framework and Sustainable Innovation Capa.pdf",
+    "Impact on Sustainable Performance Through the Perspective of the TOE Framework and Sustainable Innovation Capa": "Sessions Word Abstracts/Session 8 – Digital Solutions for Operational Excellence (Online Session)/Impact on Sustainable Performance Through the Perspective of the TOE Framework and Sustainable Innovation Capa.pdf",
+    "Dynamic Game-Theoretic Cooperative PWM-Based Energy Management for EV Charging Infrastructures": "Sessions Word Abstracts/Session 8 – Digital Solutions for Operational Excellence (Online Session)/Dynamic Game-Theoretic Cooperative PWM-Based Energy Management for EV Charging Infrastructures.pdf",
+    "Digital Twin-Driven, Human-Centric Ergonomic Risk Forecasting in Manufacturing Assembly: Collective Case Study": "Sessions Word Abstracts/Session 8 – Digital Solutions for Operational Excellence (Online Session)/Digital Twin-Driven, Human-Centric Ergonomic Risk Forecasting in Manufacturing Assembly Collective Case Study.pdf",
+    "Digital Twin-Driven, Human-Centric Ergonomic Risk Forecasting in Manufacturing Assembly Collective Case Study": "Sessions Word Abstracts/Session 8 – Digital Solutions for Operational Excellence (Online Session)/Digital Twin-Driven, Human-Centric Ergonomic Risk Forecasting in Manufacturing Assembly Collective Case Study.pdf",
+  "How does the IATF 16949 Standard Outperform ISO 9001 in Improving Operational Excellence?": "Sessions Word Abstracts/Session 8 – Digital Solutions for Operational Excellence (Online Session)/How does the IATF 16949 Standard Outperform ISO 9001 in Improving Operational Excellence An Empirical and Comp.pdf",
+  "How does the IATF 16949 Standard Outperform ISO 9001 in Improving Operational Excellence An Empirical and Comp": "Sessions Word Abstracts/Session 8 – Digital Solutions for Operational Excellence (Online Session)/How does the IATF 16949 Standard Outperform ISO 9001 in Improving Operational Excellence An Empirical and Comp.pdf"
     };
 
     // Fonction utilitaire: échappe les caractères pour une URL relative correcte
@@ -399,8 +416,18 @@
         const titleMatch = text.match(/–\s*(.+)$/);
         const extractedTitle = titleMatch ? titleMatch[1].trim() : text;
         
-        // Normaliser les chaînes pour la comparaison
-        const normalizeString = (str) => str.replace(/\s+/g, ' ').trim().toLowerCase();
+        // Normaliser les chaînes pour la comparaison (tolérant aux accents/ponctuation)
+        const normalizeString = (str) => str
+          // NFC puis retirer les diacritiques
+          .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+          // unifier les tirets/apostrophes/quotes
+          .replace(/[’'`]/g, "'")
+          .replace(/[–—‐-]+/g, '-')
+          // enlever les caractères non alphanumériques (conserver espaces et tirets)
+          .replace(/[^a-zA-Z0-9\s-]+/g, '')
+          // convertir et réduire espaces
+          .toLowerCase().replace(/\s+/g, ' ').trim();
+
         const normalizedExtracted = normalizeString(extractedTitle);
         
         // Chercher une correspondance dans docPaths
@@ -409,13 +436,19 @@
           if (!Object.prototype.hasOwnProperty.call(docPaths, key)) continue;
           
           const normalizedKey = normalizeString(key);
-          
 
-          
-          // Correspondance exacte ou normalisée
+          // Correspondance exacte ou normalisée stricte
           if (key === extractedTitle || normalizedKey === normalizedExtracted) {
             matchedKey = key;
             break;
+          }
+
+          // Correspondance partielle (un des deux contient l'autre) si suffisamment longue
+          if (normalizedExtracted.length >= 20) {
+            if (normalizedKey.includes(normalizedExtracted) || normalizedExtracted.includes(normalizedKey)) {
+              matchedKey = key;
+              break;
+            }
           }
         }
         
@@ -434,6 +467,18 @@
         a.rel = 'noopener';
         li.parentNode.replaceChild(a, li);
         a.appendChild(li);
+
+        // Vérifier l'existence du PDF (HEAD). Marque en rouge si 404
+        try {
+          const resp = await fetch(a.href, { method: 'HEAD' });
+          if (!resp.ok) {
+            a.classList.add('broken-link');
+            a.title = 'PDF introuvable (HTTP ' + resp.status + ')';
+          }
+        } catch (e) {
+          a.classList.add('broken-link');
+          a.title = 'PDF introuvable';
+        }
       }));
     }
 
